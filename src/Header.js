@@ -1,4 +1,4 @@
-function Header() {
+function Header({children}) {
     return (
         <header>
             <h1>Virtual Reality Inc</h1>
@@ -6,10 +6,7 @@ function Header() {
             <hr />
             <br />
             <nav>
-                <a href="/">Home</a>
-                <a href="/about.html">About</a>
-                <a href="/login.html">Login</a>
-                <a href="/register.html">Register</a>
+                {children}
             </nav>
             <br />
             <hr />

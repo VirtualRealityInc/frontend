@@ -20,16 +20,16 @@ a {
   text-decoration: none;
   font-size: 1.5em;
   padding: 15px;
-  text-shadow: 1px 3px 5px gray;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: gray;
   text-shadow: 1px 3px 5px green;
 }
 
-img {
+a:hover {
+  /* text-decoration: underline; */
+  color: white;
+  text-shadow: 1px 3px 1px green;
+}
+
+.homeimg {
   width: 100%;
 /*   height: 75%; */
   overflow: hidden;
@@ -44,9 +44,20 @@ img {
   text-decoration: none;
 }
 
-h2, h3, p {
+h2, h3 {
   padding: 15px;
   font-size: 2em;
+  color: white;
+  text-shadow: 3px 3px 1px green;
+  font-family: 'Goldman', cursive;
+  font-weight: bolder;
+}
+
+p {
+  text-align: center;
+  margin: 0 5%;
+  padding: 15px;
+  font-size: 1.25em;
   color: white;
   text-shadow: 3px 3px 1px green;
   font-family: 'Goldman', cursive;
@@ -60,7 +71,46 @@ footer, header {
 
 hr {
   height: 5px;
-  box-shadow: 2px 2px 2px white;
+  box-shadow: 2px 2px 1px white;
 }
+
+.imgs {
+  width: 150px;
+  border-radius: 15px 0px 15px 0px;
+  box-shadow: 7px 7px 1px rgb(9, 164, 238);
+  margin: 5%;
+}
+
+.ourTeam {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+  /* margin: 25px; */
+  /* padding: 10px; */
+}
+
+.unit1 {
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+}
+
+/* .unit2 {
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+}
+
+.unit3 {
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+}
+
+.unit4 {
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+} */
 
 
