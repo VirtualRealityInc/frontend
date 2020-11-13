@@ -1,6 +1,7 @@
 * { 
   background-color: black;
   font-family: 'Orbitron', sans-serif;
+  /* border: 1px solid gray; */
 }
 
 h1 {
@@ -71,7 +72,7 @@ h3 {
 p {
   text-align: center;
   margin: 0 5%;
-  padding: 15px;
+  /* padding: 15px; */
   font-size: 1.25em;
   color: white;
   text-shadow: 3px 3px 1px green;
@@ -94,39 +95,23 @@ hr {
   width: 150px;
   border-radius: 15px 0px 15px 0px;
   box-shadow: 7px 7px 1px rgb(9, 164, 238);
-  margin: 5%;
+  /* margin: 5%; */
 }
 
 .ourTeam {
   display: flex;
   justify-content: center;
   flex-flow: wrap;
+  max-width: 100%;
   /* margin: 25px; */
   /* padding: 10px; */
 }
 
-.unit1 {
+.member {
+  text-align: center;
   display: flex;
   justify-content: space-evenly;
   flex-flow: wrap;
-}
-
-/* .unit2 {
-  display: flex;
-  justify-content: space-evenly;
-  flex-flow: wrap;
-}
-
-.unit3 {
-  display: flex;
-  justify-content: space-evenly;
-  flex-flow: wrap;
-}
-
-.unit4 {
-  display: flex;
-  justify-content: space-evenly;
-  flex-flow: wrap;
-} */
-
-
+  width: 23%;
+  padding-bottom:5%;
+} 

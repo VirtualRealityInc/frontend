@@ -20,28 +20,34 @@ function About() {
 
                 <h2>Our Team</h2>
                 <div className="ourTeam">
-                        {/* <div className="unit1"> */}
+                        <div className="member">
                                 <img className="imgs" src="https://i.ibb.co/dWbrTJk/James.jpg" alt="James" border="0" />
-                                {/* <p>James Murphy <span>•</span> Unit 1</p> */}
+                                <p>James Murphy <span>•</span> Unit 1</p>
+                                </div>
+                                <div className="member">
                                 <img className="imgs" src="https://i.ibb.co/pxm00Rf/Johnny.jpg" alt="Johnny" border="0" />
-                                {/* <p>Johnny Murillo <span>•</span> Unit 1</p> */}
-                        {/* </div>
-                        <div className="unit2"> */}
+                                <p>Johnny Murillo <span>•</span> Unit 1</p>
+                        </div>
+                        <div className="member">
                                 <img className="imgs" src="https://i.ibb.co/0sQRLPm/John.jpg" alt="John" border="0" />
-                                {/* <p>John Chamberlain <span>•</span> Frontend Engineer <span>•</span> Unit 2</p> */}
+                                <p>John Chamberlain <span>•</span> Unit 2</p>
+                                </div>
+                                <div className="member">
                                 <img className="imgs" src="https://i.ibb.co/FkrpGSM/Kenneth.jpg" alt="Kenneth" border="0" />
-                                {/* <p>Kenneth H <span>•</span> Frontend Engineer <span>•</span> Unit 2</p> */}
-                        {/* </div>
-                        <div className="unit3"> */}
+                                <p>Kenneth H <span>•</span> Unit 2</p>
+                        </div>
+                        <div className="member">
                                 <img className="imgs" src="https://i.ibb.co/wytspj5/Fernando.jpg" alt="Fernando" border="0" />
-                                {/* <p>Fernando Chavez <span>•</span> Frontend Engineer <span>•</span> Unit 3</p> */}
-                        {/* </div>
-                        <div className="unit4"> */}
+                                <p>Fernando Chavez <span>•</span> Unit 3</p>
+                        </div>
+                        <div className="member">
                                 <img className="imgs" src="https://i.ibb.co/nrn1zSK/Sam.jpg" alt="Sam" border="0" />    
-                                {/* <p>Sam Tarullo <span>•</span> Backend Engineer <span>•</span> Unit 4</p> */}
+                                <p>Sam Tarullo <span>•</span> Unit 4</p>
+                                </div>
+                                <div className="member">
                                 <img className="imgs" src="https://i.ibb.co/F39CXT9/virginia.png" alt="virginia" border="0" />
-                                {/* <p>Virginia Scirrotto <span>•</span> Backend Engineer <span>•</span> Unit 4</p> */}
-                        {/* </div> */}
+                                <p>Virginia Scirrotto <span>•</span> Unit 4</p>
+                        </div>
                 </div>
         </>
     )
