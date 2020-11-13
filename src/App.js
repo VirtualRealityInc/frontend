@@ -28,7 +28,7 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <main>
-          <img className="homeimg" src="https://assets.weforum.org/global_future_council/image/vCuWaMxdmlbJw5CLpu_f-Svmj1aDEDjD-m-nLgwg8Q8.jpeg" aria-label="virtual reality" />
+          <img className="homeimg" src="https://i.ibb.co/thW47BP/vr-Updated.jpg" alt="vr-Updated" border="0"/>
           <Switch>
             <Route path="/about">
               <About />
