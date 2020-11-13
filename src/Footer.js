@@ -6,7 +6,7 @@ function Footer({children}) {
             <a href="#" class="fa fa-twitter"></a>
             <a href="#" class="fa fa-youtube"></a>
            
-            <h3>All Rights ® Reserved <span>•</span> Copyright © 2020</h3>
+            <h3>All Rights ® Reserved • Copyright © 2020</h3>
         </footer>
     )
 }

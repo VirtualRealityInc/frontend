@@ -4,6 +4,10 @@
   /* border: 1px solid gray; */
 }
 
+/* .banner {
+  background-color: rgb(124, 248, 124);
+} */
+
 h1 {
   padding: 15px;
   font-size: 3em;
@@ -27,6 +31,7 @@ a {
   font-size: 1.5em;
   padding: 15px;
   text-shadow: 1px 3px 5px green;
+  /* background-color: rgb(124, 248, 124); */
 }
 
 a:hover {
