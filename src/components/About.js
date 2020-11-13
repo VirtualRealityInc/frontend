@@ -41,7 +41,7 @@ function About() {
                                 <p>Fernando Chavez <span>•</span> Unit 3</p>
                         </div>
                         <div className="member">
-                                <img className="imgs" src="https://i.ibb.co/nrn1zSK/Sam.jpg" alt="Sam" border="0" />    
+                                <img className="imgs" src="https://i.ibb.co/nrn1zSK/Sam.jpg" alt="Sam" border="0" />   
                                 <p>Sam Tarullo <span>•</span> Unit 4</p>
                                 </div>
                                 <div className="member">

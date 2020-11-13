@@ -100,7 +100,7 @@ hr {
   width: 150px;
   border-radius: 15px 0px 15px 0px;
   box-shadow: 7px 7px 1px rgb(9, 164, 238);
-  /* margin: 5%; */
+  margin-bottom: 15px;
 }
 
 .ourTeam {
@@ -118,5 +118,5 @@ hr {
   justify-content: space-evenly;
   flex-flow: wrap;
   width: 23%;
-  padding-bottom:5%;
+  padding-bottom:25px;
 } 
