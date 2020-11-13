@@ -5,7 +5,7 @@ import styled from 'styled-components'
 function Home() {
     return (
         <>
-            
+           <img className="homeimg" src="https://i.ibb.co/thW47BP/vr-Updated.jpg" alt="vr-Updated" border="0"/> 
         </>
     )
 }

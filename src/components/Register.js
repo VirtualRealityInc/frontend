@@ -5,7 +5,7 @@ import styled from 'styled-components'
 function Register() {
     return (
         <>
-            Register
+            <h1>REGISTER FORM :::PLACEHOLDER:::</h1>
         </>
     )
 }

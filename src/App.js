@@ -28,7 +28,6 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <main>
-          <img className="homeimg" src="https://i.ibb.co/thW47BP/vr-Updated.jpg" alt="vr-Updated" border="0"/>
           <Switch>
             <Route path="/about">
               <About />
