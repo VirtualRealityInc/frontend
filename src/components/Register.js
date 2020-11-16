@@ -113,6 +113,7 @@ const StyledRegister = styled.div`
 
     select {
         color:white;
+        margin: 1rem;
     }
 
     button {

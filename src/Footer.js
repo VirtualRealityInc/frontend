@@ -1,4 +1,8 @@
+import React from 'react';
+import axios from 'axios';
+import styled from 'styled-components';
 function Footer({children}) {
+
     return (
         <footer>
              <hr />
@@ -10,5 +14,4 @@ function Footer({children}) {
         </footer>
     )
 }
-
 export default Footer;

@@ -15,8 +15,10 @@ import Register from './components/Register'
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Axios from "axios";
 
 export default function App() {
+
   return (
     <Router>
         <Header>
