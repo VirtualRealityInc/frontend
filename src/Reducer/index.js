@@ -5,7 +5,7 @@ const initailState = {
         {
             name: 'Fernando',
             email: 'example@123.com',
-            id: '0',
+            id: 0,
         },
     ],
 
@@ -17,7 +17,7 @@ const initailState = {
             img: '',
             userName: 'Fernando',
             email: 'exapmle@123.com',
-            id: '0',
+            id: 0,
         },
     ],
 

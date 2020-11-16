@@ -13,9 +13,11 @@ import About from './components/About'
 import Login from './components/Login'
 import Register from './components/Register'
 import Projects from './components/Projects'
+import AddProject from './components/AddProject'
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { ADD_PROJECT } from "./Actions";
 
 
 export default function App() {
@@ -32,6 +34,9 @@ export default function App() {
             renders the first one that matches the current URL. */}
         <main>
           <Switch>
+            <Route path='/addproject'>
+              <AddProject/>
+            </Route>
             <Route path='/projects'>
               <Projects/>
             </Route>

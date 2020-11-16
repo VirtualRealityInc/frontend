@@ -48,6 +48,10 @@ function About() {
                                 <img className="imgs" src="https://i.ibb.co/F39CXT9/virginia.png" alt="virginia" border="0" />
                                 <p>Virginia Scirrotto <span>•</span> Unit 4</p>
                         </div>
+                        <div className="member">
+                                <img className="imgs" src="https://i.ibb.co/cbHW1Bq/jacob.jpg" alt="jacob" border="0" />
+                                <p>Jacob Ollness <span>•</span> Unit 2</p>
+                        </div>
                 </div>
         </>
     )
