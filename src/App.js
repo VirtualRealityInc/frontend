@@ -14,6 +14,7 @@ import Login from './components/Login'
 import Register from './components/Register'
 
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default function App() {
   return (
