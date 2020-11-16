@@ -1,3 +1,17 @@
+✅  MVP
+The first step of the platform is building the ability to raise capital for new tech projects. Ilhan, who is a high school dropout, has a keen interest in starting her own business in the emerging technology sector. She can log in to her account and create a project to start fundraising for it. Those with funding can come to the site and browse projects looking to raise capital.
+
+1. Registration and login capabilities for a `user`.
+2. As a `fundraiser` I can create a `project` to start fundraising.
+3. As a `funder` I can browse the page and find `projects` I would like to fund.
+
+## 🏃‍♀️ **Stretch**
+
+1. Integrate a payment service (Stripe, for example ) to donate to a `project`.
+2. Authenticated `user` can set up push notifications to be triggered when a particular `fundraiser` reaches a certain percentage of and / or reaches its `goal`.
+3. An authenticated `user` can upload `image`s. If no `user` `image` is provided, a placeholder `image` populates the view.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
