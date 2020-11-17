@@ -65,17 +65,17 @@ function Register() {
                 <div className='inputs'>
                     <div className='validation'>{errors.name}</div>
                     <label>Name
-                        <input type='name' name='name' value={formData.name} onChange={change}/>
+                        <input type='name' name='name' value={formData.name} onChange={change} placeholder="Enter your name"/>
                     </label>
 
                     <div className='validation'>{errors.email}</div>
                     <label>Email
-                        <input type='email' name='email' value={formData.email} onChange={change}/>
+                        <input type='email' name='email' value={formData.email} onChange={change} placeholder='Enter your email'/>
                     </label>
 
                     <div className='validation'>{errors.password}</div>
                     <label>Password
-                        <input type='password' name='password' value={formData.password} onChange={change}/>
+                        <input type='password' name='password' value={formData.password} onChange={change} placeholder='Enter your password'/>
                     </label>
 
                     <div className='validation'>{errors.role}</div>
@@ -113,6 +113,7 @@ const StyledRegister = styled.div`
 
     select {
         color:white;
+        margin:1rem;
     }
 
     button {
