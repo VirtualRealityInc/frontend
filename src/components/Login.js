@@ -33,9 +33,9 @@ const schema = yup.object().shape({
         .string()
         .required("Password is Required")
         .min(6, "Password must be 6 chars long"),
-    select: yup
-        .string()
-        .oneOf(["user", "fundraiser", "funder"], "Must Select User Type"),
+    // select: yup
+    //     .string()
+    //     .oneOf(["user", "fundraiser", "funder"], "Must Select User Type"),
 
 });
 
@@ -106,7 +106,7 @@ const Example = (props) => {
                 <Label for="examplePassword">Password</Label>
                 <Input type="password" onChange={onChange} name="password" id="examplePassword" placeholder="Enter A Password" />
             </FormGroup>
-            <FormGroup>
+            {/* <FormGroup>
                 <Label for="exampleSelect">Account Type</Label>
                 <Input type="select" onChange={onChange} name="select" id="exampleSelect">
                     <option value="">- Select an option -</option>
@@ -114,7 +114,7 @@ const Example = (props) => {
                     <option value="fundraiser">Fundraiser</option>
                     <option value="funder">Funder</option>
                 </Input>
-            </FormGroup>
+            </FormGroup> */}
             <Button disabled={disabled}>Submit</Button>
         </Form>
     );
