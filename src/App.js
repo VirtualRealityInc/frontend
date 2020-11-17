@@ -26,8 +26,9 @@ export default function App() {
         <Header>
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
-          <Link to="/login">Login</Link>
           <Link to="/register">Register</Link>
+          <Link to="/login">Login</Link>
+          
         </Header>
 
         {/* A <Switch> looks through its children <Route>s and
