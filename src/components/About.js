@@ -29,6 +29,10 @@ function About() {
                                 <p>Johnny Murillo <span>•</span> Unit 1</p>
                         </div>
                         <div className="member">
+                                <img className="imgs" src="https://i.ibb.co/cbHW1Bq/jacob.jpg" alt="jacob" border="0" />
+                                <p>Jacob Ollness <span>•</span> Unit 2</p>
+                        </div>
+                        <div className="member">
                                 <img className="imgs" src="https://i.ibb.co/0sQRLPm/John.jpg" alt="John" border="0" />
                                 <p>John Chamberlain <span>•</span> Unit 2</p>
                                 </div>
@@ -47,10 +51,6 @@ function About() {
                                 <div className="member">
                                 <img className="imgs" src="https://i.ibb.co/F39CXT9/virginia.png" alt="virginia" border="0" />
                                 <p>Virginia Scirrotto <span>•</span> Unit 4</p>
-                        </div>
-                        <div className="member">
-                                <img className="imgs" src="https://i.ibb.co/cbHW1Bq/jacob.jpg" alt="jacob" border="0" />
-                                <p>Jacob Ollness <span>•</span> Unit 2</p>
                         </div>
                 </div>
         </>
