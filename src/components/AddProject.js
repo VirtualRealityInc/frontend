@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
+import { addProject } from '../Actions'
+import {useHistory, Redirect} from 'react-router-dom'
 
 import { Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap';
 import { FlexyDiv } from './Projects'
@@ -16,25 +18,41 @@ const initailFormValues = {
 
 const AddProject = (props) => {
     const [form, setForm] = useState(initailFormValues)
+    const { push } = useHistory()
     const onChange = e => {
         setForm({...form, [e.target.name]: e.target.value})
-        console.log(form)
     }
+    const onSubmit = e => {
+        e.preventDefault()
+        const newForm = {
+            project_name: form.title,
+            project_description: form.description,
+            funding_goal: Number(form.amtToRaise)
+        }
+        console.log(newForm)
+        props.addProject(newForm)
+        push("/projects")
+    }
+    useEffect(()=>{
+        if(localStorage.role !== "fundraiser"){
+            push("/")
+        }
+    },[])
     return(
         <FlexyDiv>
-            <Form>
+            <Form onSubmit={onSubmit}>
                 <Row>
                     <Col>
                         <FormGroup>
-                            <Label htmlFor='title'>Title: </Label>
+                            <Label style={{color: "white"}} htmlFor='title'>Title: </Label>
                             <Input onChange={onChange} type='text' name='title' placeholder='Title for fundraiser'/>
-                            <Label htmlFor='description'>Description: </Label>
+                            <Label style={{color: "white"}} htmlFor='description'>Description: </Label>
                             <Input onChange={onChange} type='textarea' name='description' placeholder='Description for fundraiser'/>
-                            <Label htmlFor='amtToRaise'>Amout you want to raise: </Label>
+                            <Label style={{color: "white"}} htmlFor='amtToRaise'>Amout you want to raise: </Label>
                             <Input onChange={onChange} type='number' name='amtToRaise' placeholder='Fundraiser goal'/>
-                            <Label htmlFor='userName'>Name: </Label>
+                            <Label style={{color: "white"}} htmlFor='userName'>Name: </Label>
                             <Input onChange={onChange} type='text' name='userName' placeholder='Enter your name'/>
-                            <Label htmlFor='email'>Email: </Label>
+                            <Label style={{color: "white"}} htmlFor='email'>Email: </Label>
                             <Input onChange={onChange} type='email' name='email' placeholder='Enter Email'/>
                             <br/>
                             <Button>Submit Project</Button>
@@ -56,4 +74,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {})(AddProject)
+export default connect(mapStateToProps, {addProject})(AddProject)

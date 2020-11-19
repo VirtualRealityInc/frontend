@@ -3,6 +3,8 @@ import React from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import * as yup from "yup";
 import { useState, useEffect } from 'react';
+import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 
 ////INITITAL STATES
 const initialFormErrors = {
@@ -18,6 +20,8 @@ const initialFormValues = {
     password: "",
     select: "",
 }
+
+
 
 ///////SCHEMA
 const schema = yup.object().shape({
@@ -45,6 +49,7 @@ const Example = (props) => {
     const [formErrors, setFormErrors] = useState(initialFormErrors);
     const [formValues, setFormValues] = useState(initialFormValues);
     const [disabled, setDisabled] = useState(true);
+    const { push } = useHistory()
 
     const onChange = (evt) => {
         const { name, value } = evt.target;
@@ -77,11 +82,35 @@ const Example = (props) => {
           setDisabled(!valid);
         });
       }, [formValues]);
-      console.log(formErrors);
-    
+      
+
+    const onSubmit = e => {
+      e.preventDefault()
+      console.log(formValues)
+      const newForm = {
+        email: formValues.email,
+        password: formValues.password
+      }
+      axios.post('https://somethingg.herokuapp.com/api/auth/login', newForm)
+        .then(res => {
+          console.log(res.data)
+          localStorage.setItem("token", res.data.token)
+          localStorage.setItem("message", res.data.message)
+          localStorage.setItem("role", res.data.role)
+          if(localStorage.role === "fundraiser"){
+            setFormValues(initialFormValues)
+            push("/addproject")
+          }else if(localStorage.role === "funder"){
+            setFormValues(initialFormValues)
+            push("/projects")
+          }
+        }).catch(err => {
+          console.log(err.message)
+        })
+    }
 
     return (
-        <Form 
+        <Form  onSubmit={onSubmit}
         style={{ color: 'white' }}
             values={formValues}
             change={onChange}
@@ -99,7 +128,7 @@ const Example = (props) => {
                 <Input type="ext" onChange={onChange} name="name" id="exampleName" placeholder="Please enter your name here" />
             </FormGroup>
             <FormGroup>
-                <Label for="exampleEmail">Email/Username</Label>
+                <Label for="exampleEmail">Email</Label>
                 <Input type="email" onChange={onChange} name="email" id="exampleEmail" placeholder="Please enter your email here" />
             </FormGroup>
             <FormGroup>
