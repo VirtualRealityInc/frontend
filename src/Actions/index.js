@@ -37,3 +37,12 @@ export const getProject = (id) => (dispatch) => {
             console.log(err)
         })
 }
+
+export const editProject = (id, project) => (dispatch) => {
+    axiosWithAuth().put(`/projects/${id}`, project)
+        .then(res=>{
+            console.log("New Project", res)
+        }).catch(err => {
+            console.log("Edit Project Error: ", err)
+        })
+}

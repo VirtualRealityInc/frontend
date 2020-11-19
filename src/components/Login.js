@@ -98,10 +98,8 @@ const Example = (props) => {
           localStorage.setItem("message", res.data.message)
           localStorage.setItem("role", res.data.role)
           if(localStorage.role === "fundraiser"){
-            setFormValues(initialFormValues)
             push("/addproject")
           }else if(localStorage.role === "funder"){
-            setFormValues(initialFormValues)
             push("/projects")
           }
         }).catch(err => {

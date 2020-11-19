@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { findProjects} from '../Actions'
+import { useLocation } from 'react-router-dom'
 
 import styled from 'styled-components'
 
@@ -12,9 +13,10 @@ export const FlexyDiv = styled.div`
     flex-wrap:wrap;
     `
 const Projects = (props) => {
+    let location = useLocation()
     useEffect(() => {
         props.findProjects()
-    }, [])
+    }, [location.pathname])
     return(
         <FlexyDiv>
             {props.projects.map(item => <Project key={item.id} id={item.id} title={item.project_name} subTitle={item.funding_goal} desc={item.project_description}/>)}
