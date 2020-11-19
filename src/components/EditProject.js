@@ -17,6 +17,7 @@ const EditProject = (props) => {
     }
     const [formVales, setFormValues] = useState(proj)
     const [isEditing, setIsEditing] = useState(false)
+    const [updatingProject, setUpdatingProject] = useState({})
     
     const { id } = useParams()
     const { push } = useHistory()
@@ -26,6 +27,7 @@ const EditProject = (props) => {
             push("/")
         }else{
             props.getProject(id)
+            setUpdatingProject(props.project[0])
             console.log(id)
         }
     },[id])
@@ -36,6 +38,7 @@ const EditProject = (props) => {
 
     const onChange = e => {
         setFormValues({...formVales, [e.target.name]: e.target.value})
+        setUpdatingProject({...updatingProject, [e.target.name]: e.target.value})
         console.log(formVales)
     }
 
@@ -58,9 +61,9 @@ const EditProject = (props) => {
                 <Col>
                     <Card>
                         <CardBody>
-                            <CardTitle style={{color: "white"}}>{props.project[0].project_name}</CardTitle>
-                            <CardSubtitle style={{color: "white"}}>{props.project[0].funding_goal}</CardSubtitle>
-                            <CardText>{props.project[0].project_description}</CardText>
+                            <CardTitle style={{color: "white"}}>{!formVales.title ? proj.project_name : formVales.title}</CardTitle>
+                            <CardSubtitle style={{color: "white"}}>{!formVales.desc ? proj.project_description : formVales.desc}</CardSubtitle>
+                            <CardText>{!formVales.goal ? proj.funding_goal : formVales.goal}</CardText>
                             {isEditing ? <></> : <Button onClick={onEdit} style={{color:"white"}}>Edit information</Button>}
                         </CardBody>
                     </Card>
