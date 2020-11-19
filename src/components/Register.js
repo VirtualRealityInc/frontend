@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import * as yup from 'yup';
+import { useHistory } from 'react-router-dom'
 
 const initialFormData = {
     name: '',
@@ -21,9 +22,10 @@ function Register() {
     const [formData, setFormData] = useState(initialFormData);
     const [errors, setErrors] = useState(initialFormData);
     const [disabled, setDisabled] = useState(true);
+    const { push } = useHistory()
 
 
-    
+
 
     const setFormErrors = (name, value) => {
         yup.reach(schema, name).validate(value)
@@ -48,8 +50,23 @@ function Register() {
 
     const submit = (evt) => {
         evt.preventDefault();
-        setFormData(initialFormData);
+        console.log(formData)
+        const newForm = {
+            display_name: formData.name,
+            email: formData.email,
+            password: formData.password,
+            role: formData.role
+        }
+        console.log(newForm)
+        axios.post('https://somethingg.herokuapp.com/api/auth/register', newForm)
+            .then(res => {
+                console.log(res)
+                push("/login")
+            }).catch(err => {
+                console.log(err.message)
+            })
 
+        setFormData(initialFormData);
     }
 
     useEffect(() => {
@@ -83,7 +100,7 @@ function Register() {
                         <select name='role' value={formData.role} onChange={change}>
                             <option value=''>--Select a Role--</option>
                             <option value='funder'>Funder</option>
-                            <option value='fundrasier'>Fund-Raiser</option>
+                            <option value='fundraiser'>Fund-Raiser</option>
                         </select>
                     </label>
                     <button disabled={disabled}>Submit</button>

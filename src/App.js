@@ -1,10 +1,6 @@
-//import React from 'react'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import React, { useState, useEffect } from 'react'
+import { Switch, Route, Link, useHistory, useLocation} from "react-router-dom";
+import PrivateRoute from './Utility/PrivateRoute'
 
 import Header from './Header'
 import Footer from './Footer'
@@ -14,33 +10,62 @@ import Login from './components/Login'
 import Register from './components/Register'
 import Projects from './components/Projects'
 import AddProject from './components/AddProject'
+import EditProject from './components/EditProject'
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { ADD_PROJECT } from "./Actions";
-
 
 export default function App() {
+  const [fundRaiser, setFundRaiser] = useState(false)
+  const [funder, setFunder] = useState(false)
+  const { push } = useHistory()
+  let location = useLocation()
+
+  useEffect(() => {
+    if(window.localStorage.role === "fundraiser"){
+      setFundRaiser(true)
+      console.log("fundRaiser: ", fundRaiser)
+    }else if(window.localStorage.role === "funder"){
+      setFunder(true)
+      console.log("funder: ", funder)
+    }else{
+      setFundRaiser(false)
+      setFunder(false)
+    }
+  }, [location.pathname])
+
+  const logOut = e => {
+    e.preventDefault()
+    localStorage.removeItem("token")
+    localStorage.removeItem("message")
+    localStorage.removeItem("role")
+    console.log(localStorage)
+    push("/login")
+  }
+  console.log()
   return (
-    <Router>
+    <>
         <Header>
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
-          <Link to="/register">Register</Link>
-          <Link to="/login">Login</Link>
-          
+          {fundRaiser|| funder ? <></> : <Link to="/register">Register</Link>}
+          {fundRaiser || funder ? <></> : <Link to="/login">Login</Link>}
+          {fundRaiser ? <Link to='/addproject'>Add Project</Link> : <></>}
+          {fundRaiser || funder ? <Link to='/projects'>Projects</Link> : <></>}
+          {fundRaiser || funder ? <Link to='/' onClick={logOut} >Log Out</Link> : <></>}
         </Header>
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
+
         <main>
           <Switch>
-            <Route path='/addproject'>
-              <AddProject/>
-            </Route>
-            <Route path='/projects'>
-              <Projects/>
-            </Route>
+            <PrivateRoute path="/editproject/:id" component={EditProject}/>
+
+            <PrivateRoute exact path='/addproject' component={AddProject}/>
+
+            <PrivateRoute exact path='/projects' component={Projects}/>
+
             <Route path="/about">
               <About />
             </Route>
@@ -55,9 +80,8 @@ export default function App() {
             </Route>
           </Switch>
         </main>
-
         <Footer />
-    </Router>
+    </>
   );
 }
 
