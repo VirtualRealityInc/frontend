@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { Card, CardText, CardBody,CardTitle, CardSubtitle, Row, Col } from 'reactstrap';
 import { useHistory } from 'react-router-dom'
+import {getProject} from '../Actions';
+import {connect} from 'react-redux';
 
 
 const Div = styled.div`
@@ -12,6 +14,7 @@ const Project = (props) => {
     const { push } = useHistory()
     const onClick = () => {
         if(localStorage.role === "fundraiser"){
+            props.getProject(props.id)
             push(`/editproject/${props.id}`)
         } else{
             push("/projects")
@@ -38,4 +41,4 @@ const Project = (props) => {
     )
 }
 
-export default Project
+export default connect(null, {getProject})(Project);

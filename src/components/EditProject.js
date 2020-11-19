@@ -11,11 +11,11 @@ import { FlexyDiv } from './Projects';
 const EditProject = (props) => {    
     const proj = props.project[0]
     const initailFormValues = {
-        title: proj.project_name,
-        goal: proj.funding_goal,
-        desc: proj.project_description,
+        title: props.project.project_name,
+        goal: props.project.funding_goal,
+        desc: props.project_description,
     }
-    const [formVales, setFormValues] = useState(initailFormValues)
+    const [formVales, setFormValues] = useState(proj)
     const [isEditing, setIsEditing] = useState(false)
     
     const { id } = useParams()
@@ -50,6 +50,7 @@ const EditProject = (props) => {
         setIsEditing(false)
         push("/projects")
     }
+    console.log(props.project)
     
     return(
         <FlexyDiv style={{margin:"1rem"}}>
@@ -57,9 +58,9 @@ const EditProject = (props) => {
                 <Col>
                     <Card>
                         <CardBody>
-                            <CardTitle style={{color: "white"}}>{formVales.title}</CardTitle>
-                            <CardSubtitle style={{color: "white"}}>{formVales.goal}</CardSubtitle>
-                            <CardText>{formVales.desc}</CardText>
+                            <CardTitle style={{color: "white"}}>{props.project[0].project_name}</CardTitle>
+                            <CardSubtitle style={{color: "white"}}>{props.project[0].funding_goal}</CardSubtitle>
+                            <CardText>{props.project[0].project_description}</CardText>
                             {isEditing ? <></> : <Button onClick={onEdit} style={{color:"white"}}>Edit information</Button>}
                         </CardBody>
                     </Card>
